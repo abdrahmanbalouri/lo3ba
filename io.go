@@ -24,11 +24,8 @@ func readTetrominoes(filename string) ([]*Tetromino, error) {
 		// Handle empty lines
 		if line == "" {
 			if len(currentPiece) == 0 {
-				// Multiple empty lines or empty line at start
-				if len(pieces) == 0 {
-					return nil, fmt.Errorf("invalid format: unexpected empty line")
-				}
-				continue
+				
+				return nil, fmt.Errorf("invalid format: unexpected empty line")
 			}
 			
 			if len(currentPiece) != 4 {

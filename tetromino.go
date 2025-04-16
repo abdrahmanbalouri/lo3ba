@@ -12,9 +12,7 @@ type Tetromino struct {
 }
 
 func newTetromino(pattern []string, label byte) (*Tetromino, error) {
-	if len(pattern) != 4 || len(pattern[0]) != 4 {
-		return nil, fmt.Errorf("invalid tetromino size")
-	}
+	
 
 	blocks := make([]Point, 0, 4)
 	for x := 0; x < 4; x++ {
@@ -57,9 +55,7 @@ func newTetromino(pattern []string, label byte) (*Tetromino, error) {
 }
 
 func isValidTetromino(blocks []Point) bool {
-	if len(blocks) != 4 {
-		return false
-	}
+	
 
 	// Check connectivity using flood fill
 	connected := make(map[Point]bool)
